@@ -144,7 +144,7 @@ function search(){
                         //create a link
                         newASong[numTotalSongSearch]=document.createElement("A");
                         document.querySelector(".result-s"+numTotalSongSearch).appendChild(newASong[numTotalSongSearch]);
-                        document.querySelector(".result-s"+numTotalSongSearch).getElementsByTagName("A")[0].setAttribute("href","/song.html"+"?id="+dataSearch.songID[numSearch]);
+                        document.querySelector(".result-s"+numTotalSongSearch).getElementsByTagName("A")[0].setAttribute("href","song.html"+"?id="+dataSearch.songID[numSearch]);
                         //create IMG
                         newIMGSong[numTotalSongSearch]=document.createElement("IMG");
                         document.querySelector(".result-s"+numTotalSongSearch).getElementsByTagName("A")[0].appendChild( newIMGSong[numTotalSongSearch]);
@@ -155,11 +155,11 @@ function search(){
                         //Create the name of the Song
                         newPSSong[numTotalSongSearch]=document.createElement("P");
                         document.querySelector(".result-s"+numTotalSongSearch).appendChild( newPSSong[numTotalSongSearch]);
-                        newPSSong[numTotalSongSearch].innerHTML=`<a href="/song.html?id=${dataSearch.songID[numSearch]}"><b>Canción:</b> <span>${dataSearch.songName[numSearch]}</span></a>`;
+                        newPSSong[numTotalSongSearch].innerHTML=`<a href="song.html?id=${dataSearch.songID[numSearch]}"><b>Canción:</b> <span>${dataSearch.songName[numSearch]}</span></a>`;
     
                         newPASong[numTotalSongSearch]=document.createElement("P");
                         document.querySelector(".result-s"+numTotalSongSearch).appendChild(newPASong[numTotalSongSearch]);
-                        newPASong[numTotalSongSearch].innerHTML=`<a href="/artist.html?id=${dataSearch.artistID[numSearch]}"><b>Artista:</b> <span>${dataSearch.artistName[numSearch]}</span></a>`;
+                        newPASong[numTotalSongSearch].innerHTML=`<a href="artist.html?id=${dataSearch.artistID[numSearch]}"><b>Artista:</b> <span>${dataSearch.artistName[numSearch]}</span></a>`;
                         //counter of Song find
                         numTotalSongSearch=numTotalSongSearch+1;
                 }
@@ -186,7 +186,7 @@ function search(){
                         //create a link
                         newAArtist[numTotalArtistSearch]=document.createElement("A");
                         document.querySelector(".result-a"+numTotalArtistSearch).appendChild(newAArtist[numTotalArtistSearch]);
-                        document.querySelector(".result-a"+numTotalArtistSearch).getElementsByTagName("A")[0].setAttribute("href","/artist.html"+"?id="+dataSearch.artistID[numSearch]);
+                        document.querySelector(".result-a"+numTotalArtistSearch).getElementsByTagName("A")[0].setAttribute("href","artist.html"+"?id="+dataSearch.artistID[numSearch]);
                         //create IMG
                         newIMGArtist[numTotalArtistSearch]=document.createElement("IMG");
                         document.querySelector(".result-a"+numTotalArtistSearch).getElementsByTagName("A")[0].appendChild( newIMGArtist[numTotalArtistSearch]);
@@ -197,7 +197,7 @@ function search(){
                         //Create the name of the artist
                         newPArtist[numTotalArtistSearch]=document.createElement("P");
                         document.querySelector(".result-a"+numTotalArtistSearch).appendChild( newPArtist[numTotalArtistSearch]);
-                        newPArtist[numTotalArtistSearch].innerHTML=`<a href="/artist.html?id=${dataSearch.artistID[numSearch]}"><b>Artista:</b> <span>${dataSearch.artistName[numSearch]}</span></a>`;
+                        newPArtist[numTotalArtistSearch].innerHTML=`<a href="artist.html?id=${dataSearch.artistID[numSearch]}"><b>Artista:</b> <span>${dataSearch.artistName[numSearch]}</span></a>`;
     
                         //counter of artist find
                         numTotalArtistSearch=numTotalArtistSearch+1;
@@ -229,7 +229,7 @@ function search(){
                          //create a link
                          newASuggestions[numTotalSuggestionsSearch]=document.createElement("A");
                          document.querySelector(".result-su"+numTotalSuggestionsSearch).appendChild(newASuggestions[numTotalSuggestionsSearch]);
-                         document.querySelector(".result-su"+numTotalSuggestionsSearch).getElementsByTagName("A")[0].setAttribute("href","/song.html"+"?id="+dataSearch.songID[numSearch]);
+                         document.querySelector(".result-su"+numTotalSuggestionsSearch).getElementsByTagName("A")[0].setAttribute("href","song.html"+"?id="+dataSearch.songID[numSearch]);
                         //create IMG
                         newIMGSuggestions[numTotalSuggestionsSearch]=document.createElement("IMG");
                         document.querySelector(".result-su"+numTotalSuggestionsSearch).getElementsByTagName("A")[0].appendChild( newIMGSuggestions[numTotalSuggestionsSearch]);
@@ -240,12 +240,12 @@ function search(){
                         //Create the name of songs and artist
                         newPASuggestions[numTotalSuggestionsSearch]=document.createElement("P");
                         document.querySelector(".result-su"+numTotalSuggestionsSearch).appendChild( newPASuggestions[numTotalSuggestionsSearch]);
-                        newPASuggestions[numTotalSuggestionsSearch].innerHTML=`<a href="/artist.html?id=${dataSearch.artistID[numSearch]}"><b>Artista:</b> <span>${dataSearch.artistName[numSearch]}</span></a>`;
+                        newPASuggestions[numTotalSuggestionsSearch].innerHTML=`<a href="artist.html?id=${dataSearch.artistID[numSearch]}"><b>Artista:</b> <span>${dataSearch.artistName[numSearch]}</span></a>`;
     
     
                         newPSSuggestions[numTotalSuggestionsSearch]=document.createElement("P");
                         document.querySelector(".result-su"+numTotalSuggestionsSearch).appendChild( newPSSuggestions[numTotalSuggestionsSearch]);
-                        newPSSuggestions[numTotalSuggestionsSearch].innerHTML=`<a href="/song.html?id=${dataSearch.songID[numSearch]}"><b>Canción:</b> <span>${dataSearch.songName[numSearch]}</span></a>`;
+                        newPSSuggestions[numTotalSuggestionsSearch].innerHTML=`<a href="song.html?id=${dataSearch.songID[numSearch]}"><b>Canción:</b> <span>${dataSearch.songName[numSearch]}</span></a>`;
     
                         //counter of Suggestions find
                         numTotalSuggestionsSearch=numTotalSuggestionsSearch+1;

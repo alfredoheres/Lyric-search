@@ -30,7 +30,7 @@ searchButton.addEventListener("click",()=>{
     
    let wordSearch=searchValue.value;
     
-   window.location.href = "/search.html"+"?ask="+wordSearch;
+   window.location.href = "search.html"+"?ask="+wordSearch;
 
 });
 
@@ -144,7 +144,7 @@ fetch("https://genius.p.rapidapi.com/songs/"+songID, {
 	document.querySelector(".card").style.background=`url('${songInfo.albumIMG}') center/cover fixed`;
 	document.querySelector(".card__album").setAttribute("src",songInfo.albumIMG);
 	document.querySelector(".card__info").getElementsByTagName("H1")[0].innerHTML=songInfo.songName;
-	document.querySelector(".card__info").getElementsByTagName("H2")[0].innerHTML=`<a href="/artist.html?id=${songInfo.artistID}">${songInfo.artistName}</a>`;
+	document.querySelector(".card__info").getElementsByTagName("H2")[0].innerHTML=`<a href="artist.html?id=${songInfo.artistID}">${songInfo.artistName}</a>`;
 	document.querySelector(".card__info").getElementsByTagName("H3")[0].innerHTML=songInfo.albumName;
 
 	

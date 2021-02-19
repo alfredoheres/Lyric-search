@@ -23,7 +23,7 @@ searchButton.addEventListener("click",()=>{
     
    let wordSearch=searchValue.value;
     
-   window.location.href = "/search.html"+"?ask="+wordSearch;
+   window.location.href = "search.html"+"?ask="+wordSearch;
 
 });
 
@@ -127,7 +127,7 @@ fetch("https://genius.p.rapidapi.com/artists/"+artistID+"/songs?sort=popularity"
         newA[i].innerHTML=`${i+1}. `+`${res.response.songs[i].title}`;
         document.querySelector(".popular__songs").appendChild(document.createElement("LI"));
         document.querySelector(".popular__songs").getElementsByTagName("LI")[i].appendChild(newA[i]);
-        document.querySelector(".popular__songs").getElementsByTagName("LI")[i].getElementsByTagName("A")[0].setAttribute("href","/song.html"+"?id="+res.response.songs[i].id)
+        document.querySelector(".popular__songs").getElementsByTagName("LI")[i].getElementsByTagName("A")[0].setAttribute("href","song.html"+"?id="+res.response.songs[i].id)
     }
 
 
