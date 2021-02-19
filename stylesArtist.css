@@ -1,0 +1,192 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background:url(https://cdn.pixabay.com/photo/2020/09/15/15/56/background-5574027__340.png);
+    background-size:cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+/* ----------------- NAV STYLE---------------------- */
+nav{
+    width: 100%;
+    height: 50px;
+    background: #393e46;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed;
+    top:0;
+    left: 0;
+    z-index: 999;
+
+}
+.icon, .icon img{
+    height: 40px;
+    width: 40px;
+    border-radius: 10%;
+    background-color: none;
+}
+.icon{
+    margin-left: 5px;
+}
+.icon img:hover{
+    opacity: 0.9;
+    cursor: pointer;
+    outline: 2px solid #ffff;
+    transition: 0.8s;
+    
+    
+}
+.search-box{
+    background: none;
+    display: flex;
+    align-items: center;
+}
+.search-btn{
+    height: 40px;
+    width: 40px;
+    background: #1e4183;
+    border-radius: 50%;
+    margin: 10px;
+    border: none; 
+    cursor: pointer;
+}
+.search-btn:hover{
+    background: #3564b9;
+    
+
+}
+i{
+    background: none;
+    color: #5e69ce;
+}
+.search-txt{
+    border: solid 2px #dad7d7 ;   
+    background: #444953;
+    outline: none;
+    color: #fffffff6;
+    font-size: 16px;
+    line-height: 30px;
+    width: 250px;
+    padding: 5px;
+    height: 35px;
+    opacity: 0.5;
+    border-radius: 5%;
+    height: 30px;
+}
+
+.search-txt:hover{
+    border: solid 3px #dad7d7
+}
+.search-txt::placeholder{
+    color: #ffffff;
+}
+
+
+
+
+
+.card{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.background{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 400px;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 99;
+    margin-top: 50px;
+    border: 1px solid #ffff;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.card__img{
+    z-index: 200;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border: 1px solid #ffff;
+    object-fit: cover;
+    
+}
+.card__img:hover{
+    border: 2px solid #ffff;
+}
+.card__info{
+    display: flex;
+    margin: 20px;
+}
+.card__info h1{
+    z-index: 299;
+    font-family: 'Reggae One', cursive;
+    color: rgb(231, 221, 221);
+}
+
+
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+
+
+
+.about{
+    margin: 5% 5%;
+    align-self: center;
+    width: 400px;
+}
+.about p{
+    font-family: cursive;
+}
+.popular{
+    width: 300px;
+    margin: 30px;
+    align-self: center;
+    
+}
+.popular__songs a, h3{
+    color: rgb(117, 43, 43);
+    font-family: 'Noto Sans', sans-serif;
+}
+.popular__title{
+    margin: 5%;
+}
+li{
+    width: 300px;
+    height: 20px;
+    overflow: hidden;
+    line-height: 20px;
+}
+li:hover{
+    background: rgb(226, 223, 223);
+}
+li a{
+    text-decoration: none;
+    color: #000;
+}
+li a:hover{
+    text-decoration:underline;
+}
+
+
+
+
+
