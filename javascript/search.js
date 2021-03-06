@@ -1,3 +1,4 @@
+//-------------------------  Catch the variables of the URL---------------------------------
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -5,11 +6,7 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 let searchID = getParameterByName("ask");
-console.log(searchID);
-
-
-
-
+//--------------------------- Set the variables----------------------------------------------
 let dataSearch={
     artistID:[],
     artistName:[],
@@ -23,8 +20,6 @@ let totalArtistSearch=[];
 let totalSongSearch=[];
 let totalSuggestionsSearch=[];
 
-
-
 const searchButton=document.querySelector(".search-btn");
 const searchValue=document.querySelector(".search-txt");
 let wordSearch=searchID;
@@ -33,22 +28,15 @@ let flagFind=false;
 
 searchValue.value=searchID;
 
-
 search();
-
-
-//----------------------------------------------------- EVENTOS AL PRESIONAR BOTON DE BUSCAR
+//------------------------------- Search in NAV Menu------------------------------------
 searchButton.addEventListener("click",()=>{
 
     wordSearch=searchValue.value;
     wordSearch=wordSearch.toUpperCase();
     search();
 });
-
-
-
-
-
+//-------------------------------- Function Search  
 function search(){
         //reset values
         if(document.querySelector(".container-info").classList.contains("suggestions")){
@@ -251,9 +239,13 @@ function search(){
                         numTotalSuggestionsSearch=numTotalSuggestionsSearch+1;
                 }
                             
-                
+                document.querySelectorAll(".container-info div div p a span").forEach(element=>{
+                    if(element.innerHTML.length>=20){
+                        element.innerHTML=element.innerHTML.substr(0,30)+"...";
+                    }
+                });
             }
-            console.log(res);  
+              
         })
         .catch(err => {
             console.error(err);
@@ -261,6 +253,3 @@ function search(){
     
     
 }
-
-
-

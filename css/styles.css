@@ -3,44 +3,48 @@
     margin:0;
     padding: 0;
     /* box-sizing: border-box; */
-    background: url(https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2020/02/fondo-minimalista.jpg);
+    
+    
+}
+body{
+    font-size: 16px;
+    background: url(https://data2.1freewallpapers.com/download/heart-minimalism-i-love-music.jpg);
     background-size:cover;
     background-position: center center;
     background-attachment: fixed;
-    
 }
-
 .search-box{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #2f3640;
-    height: 40px;
-    border-radius: 40px;
-    padding: 10px;
+    display: flex;
+    border-radius: 4.5em;
 }
 .search-box:hover > .search-txt{
-    width: 240px;
-    padding: 0 6px;
+    width: 20em;
+    padding-left: 2.5em; 
 }
 .search-box:hover > .search-btn{
-    background: white;
+    background: #8b8888;
 }
 .search-btn{
-    color: #e84118;
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    color: #9e3c24;
+    width: 4.5em;
+    height: 4.5em;
     background: #2f3640;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-}
+    border-radius: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+}   
 i{
     background:none;
+    font-size: 1.5em;
 }
 .search-txt{
     border: none;
@@ -49,19 +53,49 @@ i{
     float: left;
     padding: 0;
     color: #ffffffff;
-    font-size: 16px;
+    font-size: 1em;
     transition: 0.4s;
-    line-height: 40px;
+    line-height: 2.5em;
     width: 0px;
 }
 
 
 .description{
     text-align: center;
-    margin-top: 20px;
-    font-size: 50px;
-    font-family: 'Dancing Script', cursive;
+    margin-top: 0.8em;
+    font-size: 4em;
+    font-family: 'Balsamiq Sans', cursive;
+    color: white;
+    width: 80vw;
+    margin-right: auto;
+    margin-left: auto;
 }
     
+
+@media(max-width: 900px){
+    body{
+        font-size: 12px;
+    }
     
-  
+    .search-box:hover > .search-txt{
+        width: 20em;
+        padding-left: 2.5em; 
+    }
+    .search-txt{
+        width: 20em;
+        padding-left: 2.5em;
+    } 
+}
+@media(max-width: 500px){
+    body{
+        font-size: 8px;
+    }
+    .search-txt{
+        font-size: 1.5em;
+        width: 11em;
+    } 
+    .search-box:hover > .search-txt{
+        width: 11em;
+        padding-left: 2.5em; 
+    }
+} 

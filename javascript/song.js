@@ -61,7 +61,6 @@ fetch("https://genius.p.rapidapi.com/songs/"+songID, {
 .then(res => res.json())
 .then(res => {
 
-	console.log(res);
 
 	//save data in the asocitive array
 	if(res.response.song.album != null){
@@ -73,9 +72,7 @@ fetch("https://genius.p.rapidapi.com/songs/"+songID, {
 		}
 	}
 	
-	console.log(songInfo.albumIMG);
 	songInfo.songName=res.response.song.title;
-	console.log(songInfo.songName);
 	if(res.response.song.album != null){
 		songInfo.albumName=res.response.song.album.name;
 	}
@@ -83,7 +80,6 @@ fetch("https://genius.p.rapidapi.com/songs/"+songID, {
 		songInfo.albumName="Desconocido";
 	}
 	
-	console.log(songInfo.albumName);
 	if(res.response.song.album != null){
 		songInfo.artistName=res.response.song.album.artist.name;
 		songInfo.artistID=res.response.song.album.artist.id;
@@ -94,23 +90,19 @@ fetch("https://genius.p.rapidapi.com/songs/"+songID, {
 		songInfo.artistID=res.response.song.primary_artist.id;
 	}
 	
-	console.log(songInfo.artistName);
 	if(typeof res.response.song.writer_artists[0] !== 'undefined'){
 		songInfo.writterName=res.response.song.writer_artists[0].name;
 		document.querySelector(".info__writter").innerHTML=`<b>Escritor:</b>${songInfo.writterName}`;
 	}
-	console.log(songInfo.writterName);
 	if(res.response.song.release_date_for_display != null){
 		songInfo.releaseDate=res.response.song.release_date_for_display;
 		document.querySelector(".info__relase").innerHTML=`<b>Fecha de lanzamiento:</b>${songInfo.releaseDate}`;
 	}
 	
-	console.log(songInfo.releaseDate);
 	if(typeof res.response.song.producer_artists[0] !== 'undefined'){
 		songInfo.producerName=res.response.song.producer_artists[0].name;
 		document.querySelector(".info__producer").innerHTML=`<b>Productor:</b>${songInfo.producerName}`;
 	}
-	console.log(songInfo.producerName);
 
 	// create media
 
@@ -121,12 +113,12 @@ fetch("https://genius.p.rapidapi.com/songs/"+songID, {
 				songInfo.youtubeLink=res.response.song.media[i].url;
 				songInfo.youtubeLink=songInfo.youtubeLink.replace("watch?v=","embed/");
 
-		        document.querySelector(".youtube").innerHTML=`<iframe width="280" height="180" src=${songInfo.youtubeLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+		        document.querySelector(".youtube").innerHTML=`<iframe width="270em" height="170em" src=${songInfo.youtubeLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 			}
 			if(res.response.song.media[i].provider=="spotify"){
 				songInfo.spotifyLink=res.response.song.media[i].url;
 				songInfo.spotifyLink=songInfo.spotifyLink.replace(".com",".com/embed");
-				document.querySelector(".spotify").innerHTML=`<iframe src="${songInfo.spotifyLink}" width="280" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`
+				document.querySelector(".spotify").innerHTML=`<iframe src="${songInfo.spotifyLink}" width="270" height="75" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`
 			}
 		}
 		
@@ -136,11 +128,6 @@ fetch("https://genius.p.rapidapi.com/songs/"+songID, {
 		document.querySelector(".youtube").innerHTML=`<h4>Escucha esta canción en Youtube</h4><a href="https://www.youtube.com/results?search_query=${songInfo.songName} ${songInfo.artistName}" class="youtube__link"><img src="https://e7.pngegg.com/pngimages/902/668/png-clipart-youtube-facebook-blog-google-youtube-logo-text-logo.png" alt="youtube logo"class="youtube__link--img"></a>`
 	}
 	
-	
-
-	console.log(songInfo.youtubeLink);
-
-
 	document.querySelector(".card").style.background=`url('${songInfo.albumIMG}') center/cover fixed`;
 	document.querySelector(".card__album").setAttribute("src",songInfo.albumIMG);
 	document.querySelector(".card__info").getElementsByTagName("H1")[0].innerHTML=songInfo.songName;

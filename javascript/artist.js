@@ -37,7 +37,6 @@ fetch("https://genius.p.rapidapi.com/artists/"+artistID, {
 })
 .then(res => res.json())
 .then(res => {
-    console.log(res);
     let elementP;
 
     artistInfo.artistIMG=res.response.artist.image_url;
@@ -129,9 +128,6 @@ fetch("https://genius.p.rapidapi.com/artists/"+artistID+"/songs?sort=popularity"
         document.querySelector(".popular__songs").getElementsByTagName("LI")[i].appendChild(newA[i]);
         document.querySelector(".popular__songs").getElementsByTagName("LI")[i].getElementsByTagName("A")[0].setAttribute("href","song.html"+"?id="+res.response.songs[i].id)
     }
-
-
-    console.log(res);
 })
 .catch(err => {
 	console.error(err);
